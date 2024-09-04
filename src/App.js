@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css'; // Importa os estilos do Quill
 
 function App() {
+  const [editorContent, setEditorContent] = useState('');
+
+  const handleEditorChange = (content) => {
+    setEditorContent(content);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Rich Text Editor</h1>
+      <ReactQuill 
+        value={editorContent}
+        onChange={handleEditorChange}
+        theme="snow"
+      />
+      <div className="output">
+        <h3>Editor Output</h3>
+        <div dangerouslySetInnerHTML={{ __html: editorContent }} />
+      </div>
     </div>
   );
 }
