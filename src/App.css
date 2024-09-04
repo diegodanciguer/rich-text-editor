@@ -1,11 +1,112 @@
-.App {
-  text-align: center;
-  margin: 20px;
+/* Estilo Global */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--background-color, #f7f9fc); /* Cor de fundo variável */
+  transition: background-color 0.3s ease;
 }
 
+/* Container principal */
+.App {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: var(--app-background-color, #fff); /* Fundo do editor */
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transição para texto também */
+}
+
+/* Título */
+h1 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color, #2c3e50); /* Variável de cor para texto */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Área de visualização */
 .output {
   margin-top: 20px;
+  background-color: var(--app-background-color, #fff);
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  min-height: 200px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color, #2c3e50); /* Cor do texto no tema */
+}
+
+/* Botões */
+button {
+  padding: 12px 20px;
+  background-color: var(--button-bg-color, #3498db); /* Cor do botão variável */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: var(--button-hover-color, #2980b9); /* Cor do hover variável */
+}
+
+/* Botão de salvar */
+.save-button {
+  background-color: var(--button-save-bg-color, #27ae60);
+}
+
+.save-button:hover {
+  background-color: var(--button-save-hover-color, #1e8449);
+}
+
+/* Quill editor */
+.quill {
+  margin-bottom: 20px;
+}
+
+/* Editor de texto Quill no tema escuro */
+.ql-container {
+  background-color: var(--app-background-color, #fff); /* Fundo do editor */
+  color: var(--text-color, #2c3e50); /* Cor do texto */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.ql-editor {
+  color: var(--text-color, #2c3e50); /* Texto dentro do editor */
+}
+
+/* Tema escuro */
+.dark-theme {
+  --background-color: #2c3e50; /* Cor do fundo */
+  --app-background-color: #34495e; /* Cor do fundo do editor */
+  --text-color: #ecf0f1; /* Cor clara para o texto */
+  --button-bg-color: #1abc9c;
+  --button-hover-color: #16a085;
+  --button-save-bg-color: #1abc9c;
+  --button-save-hover-color: #16a085;
+}
+
+/* Estilização para o Select */
+.select-theme {
   padding: 10px;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px solid var(--button-bg-color, #3498db);
+  background-color: var(--button-bg-color, #3498db);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.select-theme:hover {
+  background-color: var(--button-hover-color, #2980b9);
 }
